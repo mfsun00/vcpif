@@ -1,0 +1,20 @@
+
+  ##User defined Properties:
+kafka.reuest.topic: request
+kafka.reply.topic: response
+kafka.group.id: test-group
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      auto-commit-interval: 50
+      enable-auto-commit: true
+      key-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      batch-size: 1
+      bootstrap-servers: localhost:9092
